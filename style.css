@@ -963,3 +963,27 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   .footer__timeline i { width: 40px; background: var(--imp); }
   .footer__lists { flex-direction: column; gap: 0; }
 }
+/* =========================================================
+   HERO NỀN XÁM GIỐNG FIGMA + ẢNH NỀN TÙY CHỌN
+========================================================= */
+:root {
+  --hero-gray: #e5e5e5;          /* màu xám nền – đổi mã màu ở đây nếu muốn */
+}
+
+/* Nền xám phẳng cho hero và thanh menu */
+.hero   { background: var(--hero-gray); }
+.header { background: var(--hero-gray); }
+
+/* Ảnh nền hero:
+   - Có file images/hero.png  → hiện ảnh
+   - Không có file            → giữ nền xám */
+.hero__bg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--hero-gray) url("images/hero.png") right center / cover no-repeat;
+}
+
+/* Icon play trên nút: xoay ▲ thành ▶ */
+.btn--play img { transform: rotate(90deg); }
