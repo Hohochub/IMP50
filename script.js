@@ -9,7 +9,7 @@
 /* ---------- CẤU HÌNH NHANH ---------- */
 // Dán link nhúng YouTube vào đây để nút Play mở video
 // Ví dụ: "https://www.youtube.com/embed/xxxxxxxxxxx"
-const VIDEO_URL = "";
+const VIDEO_URL = "https://www.youtube.com/embed/L6rtmqkmjUs";
 
 /* =========================================================
    0. CSS CHO HIỆU ỨNG (tự chèn vào trang, không cần sửa style.css)
