@@ -114,7 +114,7 @@ const effectCSS = `
   transform: scale(.9); transition: transform .35s;
 }
 .video-modal.is-open .video-modal__box { transform: scale(1); }
-.video-modal__box iframe { width: 100%; height: 100%; border: 0; }
+.video-modal__box iframe, .video-modal__box video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .video-modal__msg { color: #fff; display: grid; place-items: center; height: 100%; padding: 24px; text-align: center; font-size: 18px; }
 .video-modal__close {
   position: absolute; top: -48px; right: 0; color: #fff; font-size: 34px; line-height: 1;
