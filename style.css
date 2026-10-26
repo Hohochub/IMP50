@@ -1347,3 +1347,8 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
             mask-image: none;
   }
 }
+
+.thanks__script img {
+  margin-top: -2px;
+  margin-left: 150px;
+}
