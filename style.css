@@ -1375,3 +1375,52 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   height: 2px;
   background: var(--imp-green);
 }
+
+/* =========================================================
+   CUỐN SÁCH 1977 – 2027: CO GIÃN THEO MÀN HÌNH
+   Dán vào CUỐI style.css
+   Chữ trên trang sách tính theo % chiều rộng cuốn sách (cqw),
+   nên luôn nằm đúng chỗ dù màn hình to hay nhỏ.
+========================================================= */
+.book__visual {
+  container-type: inline-size;   /* cho phép dùng đơn vị cqw bên trong */
+  width: 100%;
+}
+.book__img {
+  width: 100%;
+  height: auto;
+}
+.book__page {
+  top: 46%;
+  gap: .4cqw;
+}
+.book__page--left  { left: 10.5%; }
+.book__page--right { left: 60.5%; }
+
+.book__year {
+  font-size: clamp(24px, 6.5cqw, 80px);
+  line-height: .97;
+}
+.book__caption {
+  gap: clamp(4px, .8cqw, 10px);
+  font-size: clamp(9px, 1.47cqw, 18px);
+  white-space: nowrap;
+}
+.book__caption img {
+  width: clamp(4px, .65cqw, 8px);
+  height: clamp(4px, .65cqw, 8px);
+}
+
+/* Điện thoại */
+@media (max-width: 768px) {
+  .book { padding: 10px 0 40px; }
+  .book .container { padding: 0 16px; }
+  .book .section-kicker { font-size: 20px; }
+  .book__title { font-size: 30px; }
+  .book__title strong { font-size: 44px; }
+  .book__desc { margin-top: 20px; font-size: 15px; }
+  .book__visual { margin-top: 24px; }
+  .book__img { animation: none; }        /* tắt nổi lên xuống cho đỡ rối mắt */
+  .book__year { font-size: 6.5cqw; }     /* bỏ cỡ cố định 36px cũ */
+  .book__caption { font-size: max(8px, 1.6cqw); }
+}
