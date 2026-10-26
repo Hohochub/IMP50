@@ -1424,3 +1424,8 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   .book__year { font-size: 6.5cqw; }     /* bỏ cỡ cố định 36px cũ */
   .book__caption { font-size: max(8px, 1.6cqw); }
 }
+
+/* ===== Đường cong trắng đáy hero: cong nhẹ, tỷ lệ theo màn hình ===== */
+.hero__wave {
+  height: clamp(28px, 6vw, 110px);
+}
