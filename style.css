@@ -1320,3 +1320,30 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   .journey-v2 .journey__detail-head { grid-template-columns: 1fr; }
   .journey-v2 .journey__photo { width: 90%; margin-left: 5%; }
 }
+
+/* =========================================================
+   ẢNH TÒA NHÀ BÊN PHẢI HERO (mờ dần vào nền xám)
+   Dán vào CUỐI style.css. Ảnh: images/hero.jpg
+========================================================= */
+.hero .hero__bg {
+  left: auto;
+  right: 0;
+  top: 0;
+  width: 64%;
+  height: 100%;
+  background: url("images/hero.jpg") 0% 30% / cover no-repeat;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 16%);
+          mask-image: linear-gradient(to right, transparent 0%, #000 16%);
+}
+
+/* Điện thoại: ảnh làm nền mờ phía sau chữ */
+@media (max-width: 768px) {
+  .hero .hero__bg {
+    inset: 0;
+    width: 100%;
+    opacity: .3;
+    background-position: 20% center;
+    -webkit-mask-image: none;
+            mask-image: none;
+  }
+}
