@@ -505,11 +505,3 @@ function slideEvents(dir) {
 $(".events__nav--next")?.addEventListener("click", () => slideEvents(1));
 $(".events__nav--prev")?.addEventListener("click", () => slideEvents(-1));
 
-/* ===== Đổi trạng thái VN | EN khi bấm ===== */
-document.querySelectorAll(".header__lang a").forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();   // không nhảy lên đầu trang
-    document.querySelectorAll(".header__lang a").forEach(a => a.classList.remove("is-active"));
-    link.classList.add("is-active");
-  });
-});

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>50 Years of Imexpharm</title>
+
+  <!-- Font: GMV DIN Pro / Madani không có trên Google Fonts nên dùng font thay thế gần giống -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;700;800;900&family=Plus+Jakarta+Sans:wght@500;600&family=Corinthia&family=Gravitas+One&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =========================================================
+       1. HEADER / NAV BAR
+  ========================================================== -->
+  <header class="header" id="top">
+    <div class="header__inner">
+      <a href="#top" class="header__logo">
+        <img src="images/logo.png" alt="Imexpharm 50 years" />
+      </a>
+
+      <nav class="header__nav">
+        <a href="#top" class="is-active">Imexpharm 50</a>
+        <a href="#hanh-trinh">Journey</a>
+        <a href="#con-so">Highlights</a>
+        <a href="#video">Film</a>
+        <a href="#su-kien">Events</a>
+        <a href="#tri-an">Gratitude</a>
+      </nav>
+
+      <div class="header__lang">
+        <a href="index.html">VN</a>
+        <span class="header__lang-sep"></span>
+        <a href="en.html" class="is-active">EN</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       2. HERO
+  ========================================================== -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="container hero__inner">
+      <p class="hero__eyebrow">1977 - 2027 · 50TH ANNIVERSARY</p>
+      <h1 class="hero__title">
+        <span>Steadfast</span>
+        <span>Steady pace</span>
+        <span>Reaching far</span>
+      </h1>
+      <p class="hero__desc">
+        50 years of steadfast commitment to community health. Imexpharm remains devoted to quality,
+        moves steadily toward the future and reaches further for a healthier Vietnam.
+      </p>
+      <div class="hero__actions">
+        <a href="#hanh-trinh" class="btn btn--white">Explore our journey</a>
+        <a href="#video" class="btn btn--white btn--play">
+          <img src="images/icon-play.svg" alt="" />
+          The 50-year film
+        </a>
+      </div>
+    </div>
+    <!-- đường cong trắng ở đáy hero -->
+    <svg class="hero__wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 C360,10 560,120 720,120 C880,120 1080,10 1440,0 L1440,120 L0,120 Z" fill="#fff" />
+    </svg>
+  </section>
+
+  <!-- =========================================================
+       3. 50 NĂM VÌ SỨC KHỎE CỘNG ĐỒNG (cuốn sách)
+  ========================================================== -->
+  <section class="book" id="50-nam">
+    <div class="container">
+      <p class="section-kicker">An enduring journey</p>
+      <h2 class="book__title">
+        <span class="book__title-line1"><strong>50</strong> years for</span>
+        <span class="text-green">community health</span>
+      </h2>
+      <p class="section-desc book__desc">
+        From humble beginnings to the modern Imexpharm of today, our 50-year journey has been built
+        on an unwavering commitment to quality, continuous advancement in pharmaceutical capability
+        and one constant goal: delivering greater value to community health.
+      </p>
+
+      <div class="book__visual">
+        <img src="images/book.png" alt="The Imexpharm 50-year book" class="book__img" />
+        <div class="book__page book__page--left">
+          <span class="book__year">1977</span>
+          <span class="book__caption"><img src="images/dot.svg" alt="" /> Where it all began</span>
+        </div>
+        <div class="book__page book__page--right">
+          <span class="book__year">2027</span>
+          <span class="book__caption"><img src="images/dot.svg" alt="" /> Imexpharm today</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       4. HÀNH TRÌNH PHÁT TRIỂN (bản đồ dấu mốc)
+  ========================================================== -->
+ <section class="journey journey-v2" id="hanh-trinh">
+    <div class="jv2-stage">
+
+      <!-- Chữ bên trái -->
+      <div class="journey__text jv2-text">
+        <p class="section-kicker section-kicker--left">Our journey of growth</p>
+        <h2 class="journey__title">
+          <span>Every milestone</span>
+          <span class="text-green">a step forward</span>
+        </h2>
+        <p class="section-desc section-desc--left">
+          For 50 years, Imexpharm has stayed true to its mission of “Providing highly effective
+          solutions for community health”, constantly innovating and raising quality. Every stage is a
+          milestone and every step forward is a belief in the future, keeping Imexpharm steady on its
+          journey to elevate quality and bring lasting value to the community.
+        </p>
+      </div>
+
+      <!-- Dòng sông (tự ẩn nếu đã có ảnh nền images/journey-bg.png) -->
+      <svg class="journey__river" viewBox="0 0 940 758" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="jv2River" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="#cfe9fb" />
+            <stop offset=".5" stop-color="#9fd3f5" />
+            <stop offset="1" stop-color="#e3f3fd" />
+          </linearGradient>
+        </defs>
+        <path d="M455 640 C 430 590, 450 560, 459 540 S 478 505, 484 484 S 500 420, 509 388
+                 S 520 330, 536 309 S 610 288, 672 294 S 728 312, 744 306 S 795 285, 806 265
+                 S 850 170, 896 104 S 920 60, 940 40" />
+      </svg>
+
+      <!-- Các điểm mốc trên dòng sông -->
+      <span class="jv2-dot" style="--x:48.8%; --y:71.2%"></span>
+      <span class="jv2-dot" style="--x:51.5%; --y:63.9%"></span>
+      <span class="jv2-dot" style="--x:54.1%; --y:51.2%"></span>
+      <span class="jv2-dot" style="--x:57.0%; --y:40.8%"></span>
+      <span class="jv2-dot" style="--x:71.5%; --y:38.8%"></span>
+      <span class="jv2-dot" style="--x:79.1%; --y:40.4%"></span>
+      <span class="jv2-dot" style="--x:85.7%; --y:35.0%"></span>
+      <span class="jv2-dot" style="--x:95.3%; --y:13.7%"></span>
+
+      <!-- Thẻ dấu mốc. Muốn có mô tả riêng khi bấm: thêm data-text="..." -->
+      <div class="journey__map">
+        <div class="milestone" style="--x:47.4%; --y:73.9%"><span class="milestone-num">2</span><div class="milestone__thumb"></div><div><small>1982 - 1986</small><b>Setting direction</b></div></div>
+        <div class="milestone" style="--x:42.3%; --y:55.5%"><span class="milestone-num">3</span><div class="milestone__thumb"></div><div><small>1987 - 1991</small><b>Finding our rhythm</b></div></div>
+        <div class="milestone" style="--x:59.1%; --y:64.6%"><span class="milestone-num">4</span><div class="milestone__thumb"></div><div><small>1992 - 1996</small><b>Restructuring</b></div></div>
+        <div class="milestone" style="--x:44.0%; --y:43.5%"><span class="milestone-num">5</span><div class="milestone__thumb"></div><div><small>1997 - 2001</small><b>Rising up</b></div></div>
+        <div class="milestone" style="--x:58.7%; --y:53.7%"><span class="milestone-num">6</span><div class="milestone__thumb"></div><div><small>2002 - 2006</small><b>Accelerating</b></div></div>
+        <div class="milestone" style="--x:52.4%; --y:32.7%"><span class="milestone-num">7</span><div class="milestone__thumb"></div><div><small>2007 - 2011</small><b>European standards</b></div></div>
+        <div class="milestone" style="--x:64.1%; --y:43.0%"><span class="milestone-num">8</span><div class="milestone__thumb"></div><div><small>2012 - 2016</small><b>Expanding</b></div></div>
+        <div class="milestone" style="--x:66.2%; --y:31.4%"><span class="milestone-num">9</span><div class="milestone__thumb"></div><div><small>2017 - 2022</small><b>Integrating</b></div></div>
+        <div class="milestone" style="--x:82.6%; --y:40.6%"><span class="milestone-num">10</span><div class="milestone__thumb"></div><div><small>2023</small><b>Elevating</b></div></div>
+        <div class="milestone" style="--x:85.1%; --y:27.2%"><span class="milestone-num">11</span><div class="milestone__thumb"></div><div><small>2024</small><b>Innovating</b></div></div>
+        <div class="milestone milestone--wide" style="--x:68.2%; --y:20.8%"><span class="milestone-num">12</span><div class="milestone__thumb"></div><div><small>2025</small><b>Launching a new growth cycle</b></div></div>
+        <div class="milestone" style="--x:82.8%; --y:11.6%"><span class="milestone-num">13</span><div class="milestone__thumb"></div><div><small>2026</small><b>xxxxxxx</b></div></div>
+      </div>
+
+      <!-- Thẻ chi tiết dấu mốc đang chọn -->
+      <div class="journey__detail">
+        <div class="journey__detail-head">
+          <div class="jv2-left">
+            <span class="milestone-num">1</span>
+            <div class="journey__years"><span>1977</span><span class="journey__arrow">→</span><span>1981</span></div>
+            <h3 class="journey__detail-title">First steps</h3>
+          </div>
+          <p class="journey__detail-text">
+            Level II Pharmaceutical Company – the predecessor of Imexpharm – was founded in Dong Thap,
+            distributing medicines to meet the local community’s healthcare needs.
+          </p>
+        </div>
+        <svg class="jv2-curve" viewBox="0 0 360 90" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M5 85 C 90 70, 140 30, 230 35 S 330 10, 355 2" />
+        </svg>
+        <div class="journey__photo">
+          <i class="jv2-tape jv2-tape--l"></i><i class="jv2-tape jv2-tape--r"></i>
+          <img src="images/journey-photo.png" alt="Imexpharm archive photo, 1977" />
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Có ảnh nền thì ẩn dòng sông vẽ bằng code -->
+    <script>
+      (function () {
+        var img = new Image();
+        img.onload = function () { document.getElementById("hanh-trinh").classList.add("has-bg"); };
+        img.src = "images/journey-bg.png";
+      })();
+    </script>
+  </section>
+
+  <!-- =========================================================
+       5. NHỮNG CON SỐ ẤN TƯỢNG
+  ========================================================== -->
+  <section class="numbers" id="con-so">
+    <div class="container">
+      <h2 class="section-title">
+        The numbers that tell<br />
+        <span class="text-green">Imexpharm’s story</span>
+      </h2>
+      <p class="section-desc numbers__desc">
+        Behind half a century of progress are the capabilities, scale and value that Imexpharm has
+        contributed to the pharmaceutical industry and the community.
+      </p>
+
+      <div class="numbers__grid">
+        <article class="stat-card">
+          <h3 class="stat-card__title">Capital scale</h3>
+          <img class="stat-card__icon" src="images/stat-1.png" alt="" />
+          <p class="stat-card__value">2,035</p>
+          <p class="stat-card__unit">billion VND</p>
+          <p class="stat-card__text">A solid financial foundation for sustainable growth</p>
+          <a href="#" class="stat-card__link">View details <img src="images/arrow-blue.svg" alt="" /></a>
+        </article>
+
+        <article class="stat-card">
+          <h3 class="stat-card__title">Production capacity</h3>
+          <img class="stat-card__icon" src="images/stat-2.png" alt="" />
+          <p class="stat-card__value">2,035</p>
+          <p class="stat-card__unit">billion VND</p>
+          <p class="stat-card__text">Investment in modern, internationally certified factories</p>
+          <a href="#" class="stat-card__link">View details <img src="images/arrow-blue.svg" alt="" /></a>
+        </article>
+
+        <article class="stat-card">
+          <h3 class="stat-card__title">Contribution to society</h3>
+          <img class="stat-card__icon" src="images/stat-3.png" alt="" />
+          <p class="stat-card__value">2,035</p>
+          <p class="stat-card__unit">billion VND</p>
+          <p class="stat-card__text">Contributing to social welfare programmes</p>
+          <a href="#" class="stat-card__link">View details <img src="images/arrow-blue.svg" alt="" /></a>
+        </article>
+
+        <article class="stat-card">
+          <h3 class="stat-card__title">Contribution to the community</h3>
+          <img class="stat-card__icon" src="images/stat-4.png" alt="" />
+          <p class="stat-card__value">2,035</p>
+          <p class="stat-card__unit">billion VND</p>
+          <p class="stat-card__text">Contributing to social welfare programmes</p>
+          <a href="#" class="stat-card__link">View details <img src="images/arrow-blue.svg" alt="" /></a>
+        </article>
+
+        <article class="stat-card">
+          <h3 class="stat-card__title">EU-GMP certified lines</h3>
+          <img class="stat-card__icon" src="images/stat-5.png" alt="" />
+          <p class="stat-card__value">12</p>
+          <p class="stat-card__unit">production lines</p>
+          <p class="stat-card__text">Meeting Europe’s stringent manufacturing standards.</p>
+          <a href="#" class="stat-card__link">View details <img src="images/arrow-blue.svg" alt="" /></a>
+        </article>
+
+        <article class="stat-card">
+          <h3 class="stat-card__title">Marketing authorisations in Europe</h3>
+          <img class="stat-card__icon" src="images/stat-6.png" alt="" />
+          <p class="stat-card__value">28</p>
+          <p class="stat-card__unit">licences</p>
+          <p class="stat-card__text">Proving our manufacturing capability and product quality in international markets.</p>
+          <a href="#" class="stat-card__link">View details <img src="images/arrow-blue.svg" alt="" /></a>
+        </article>
+
+        <article class="stat-card">
+          <h3 class="stat-card__title">Expanding export capacity &amp; market reach</h3>
+          <img class="stat-card__icon" src="images/stat-7.png" alt="" />
+          <p class="stat-card__value">40+</p>
+          <p class="stat-card__unit">countries &amp; territories</p>
+          <p class="stat-card__text">Bringing quality products to international markets.</p>
+          <a href="#" class="stat-card__link">View details <img src="images/arrow-blue.svg" alt="" /></a>
+        </article>
+
+        <article class="stat-card">
+          <h3 class="stat-card__title">R&amp;D projects</h3>
+          <img class="stat-card__icon" src="images/stat-8.png" alt="" />
+          <p class="stat-card__value">157</p>
+          <p class="stat-card__unit">projects</p>
+          <p class="stat-card__text">Continuous research &amp; development for highly effective solutions.</p>
+          <a href="#" class="stat-card__link">View details <img src="images/arrow-blue.svg" alt="" /></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       6. VIDEO - 50 NĂM TRONG MỘT THƯỚC PHIM
+  ========================================================== -->
+  <section class="video" id="video">
+    <div class="container">
+      <h2 class="section-title">50 years <span class="text-green">in one film</span></h2>
+      <p class="section-desc">
+        A look back at the milestones, people and values that shaped Imexpharm’s half-century journey.
+      </p>
+
+      <div class="video__player">
+        <img src="https://img.youtube.com/vi/L6rtmqkmjUs/maxresdefault.jpg"
+     onerror="this.src='https://img.youtube.com/vi/L6rtmqkmjUs/hqdefault.jpg'"
+     alt="Imexpharm 50-year film" class="video__thumb" />
+        <button class="video__play" aria-label="Play video">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       7. LỜI TRI ÂN
+  ========================================================== -->
+  <section class="thanks" id="tri-an">
+    <div class="container thanks__inner">
+
+      <div class="thanks__text">
+        <p class="thanks__kicker">A word of gratitude</p>
+        <h2 class="thanks__title">
+          <span class="thanks__big">50 years</span>
+          <span class="thanks__sub">written by IMP-ers</span>
+        </h2>
+        <p class="section-desc section-desc--left thanks__desc">
+          Thank you to everyone who has stood by Imexpharm through the years, kept a steady pace on
+          every step of the way and reached further together.
+        </p>
+        <div class="thanks__script">
+          <p>Together<br />we write the next chapter</p>
+          <img src="images/script-line.png" alt="" />
+        </div>
+      </div>
+
+      <div class="thanks__slider">
+        <!-- 3 thẻ xếp chồng, xoay nhẹ -->
+        <div class="quote-stack">
+          <div class="quote-card quote-card--back1"></div>
+          <div class="quote-card quote-card--back2"></div>
+          <article class="quote-card quote-card--front">
+            <img src="images/avatar.png" alt="Nguyen Van A" class="quote-card__photo" />
+            <div class="quote-card__body">
+              <span class="quote-card__mark">“</span>
+              <p class="quote-card__text">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                has been the industry's standard dummy text ever since 1966, when designers at Letraset
+                and James Mosley, the librarian at St Bride Printing Library in London, took a 1914
+                Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets.
+              </p>
+              <span class="quote-card__line"></span>
+              <div class="quote-card__footer">
+                <div>
+                  <p class="quote-card__name">Nguyen Van A</p>
+                  <p class="quote-card__role">Communications Officer</p>
+                </div>
+                <div class="quote-card__years">
+                  <b>10 years</b>
+                  <span>with us</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="slider-ctrl">
+          <button class="slider-ctrl__btn slider-ctrl__btn--prev" aria-label="Previous">
+            <img src="images/arrow-prev.svg" alt="" />
+          </button>
+          <div class="slider-ctrl__mid">
+            <p class="slider-ctrl__count"><b>01/</b>08</p>
+            <div class="slider-ctrl__dots">
+              <span class="is-active"></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <button class="slider-ctrl__btn slider-ctrl__btn--next" aria-label="Next">
+            <img src="images/arrow-next.svg" alt="" />
+          </button>
+        </div>
+
+        <p class="thanks__hint">
+          <img src="images/icon-hand.svg" alt="" />
+          Swipe to discover more stories from our people
+        </p>
+
+        <div class="thanks__thumbs">
+          <img src="images/thumb-1.png" alt="" class="is-active" />
+          <img src="images/thumb-2.png" alt="" />
+          <img src="images/thumb-3.png" alt="" />
+          <img src="images/thumb-4.png" alt="" />
+          <img src="images/thumb-5.png" alt="" />
+          <div class="thanks__more"><img src="images/dots.svg" alt="See more" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       8. SỰ KIỆN NỔI BẬT
+  ========================================================== -->
+  <section class="events" id="su-kien">
+    <div class="container">
+      <h2 class="section-title">Featured <span class="text-green">events</span></h2>
+      <p class="section-desc events__desc">
+        Each event is a moment of connection, spreading the values Imexpharm has steadily nurtured on
+        its journey for community health.
+      </p>
+
+      <div class="events__wrap">
+        <button class="events__nav events__nav--prev" aria-label="Previous"><img src="images/event-prev.svg" alt="" /></button>
+
+        <div class="events__grid">
+          <article class="event-card">
+            <div class="event-card__top">
+              <span class="event-card__date">12.03.2027</span>
+              <span class="badge badge--live">Happening now</span>
+            </div>
+            <h3 class="event-card__title">Cycling race celebrating the company’s 50th anniversary</h3>
+            <img src="images/event-1.jpg" alt="" class="event-card__img" />
+            <p class="event-card__place"><img src="images/icon-pin.svg" alt="" /> Cao Lanh, Dong Thap</p>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__top">
+              <span class="event-card__date">12.03.2027</span>
+              <span class="badge badge--soon">Coming soon</span>
+            </div>
+            <h3 class="event-card__title">Radio singing contest</h3>
+            <img src="images/event-2.jpg" alt="" class="event-card__img" />
+            <p class="event-card__place"><img src="images/icon-pin.svg" alt="" /> Cao Lanh, Dong Thap</p>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__top">
+              <span class="event-card__date">12.03.2027</span>
+              <span class="badge badge--live">Happening now</span>
+            </div>
+            <h3 class="event-card__title">Anniversary volleyball &amp; football tournament</h3>
+            <img src="images/event-3.png" alt="" class="event-card__img" />
+            <p class="event-card__place"><img src="images/icon-pin.svg" alt="" /> Cao Lanh, Dong Thap</p>
+          </article>
+
+          <article class="event-card">
+            <div class="event-card__top">
+              <span class="event-card__date">12.03.2027</span>
+              <span class="badge badge--soon">Coming soon</span>
+            </div>
+            <h3 class="event-card__title">Imexpharm culture contest</h3>
+            <img src="images/event-4.png" alt="" class="event-card__img" />
+            <p class="event-card__place"><img src="images/icon-pin.svg" alt="" /> Cao Lanh, Dong Thap</p>
+          </article>
+        </div>
+
+        <button class="events__nav events__nav--next" aria-label="Next"><img src="images/event-next.svg" alt="" /></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       9. FOOTER
+  ========================================================== -->
+  <footer class="footer">
+    <img src="images/footer-wave.png" alt="" class="footer__wave" />
+
+    <div class="container footer__inner">
+      <div class="footer__top">
+        <div class="footer__cta">
+          <h2 class="footer__title">
+            <span class="footer__title-big">50 years</span>
+            <span class="text-green">The journey continues</span>
+          </h2>
+          <p class="footer__desc">
+            Building on a foundation nurtured over half a century, Imexpharm keeps moving toward new
+            milestones – for quality and for community health.
+          </p>
+          <a href="#" class="btn btn--gradient">
+            Discover more about Imexpharm
+            <img src="images/arrow-white.svg" alt="" />
+          </a>
+        </div>
+
+        <div class="footer__timeline">
+          <span>1977</span><i></i><span>2027</span><i></i><span>and beyond</span>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <img src="images/footer-logo.png" alt="Imexpharm" class="footer__logo" />
+
+        <div class="footer__col footer__col--wide">
+          <h4>Explore 50 years</h4>
+          <div class="footer__lists">
+            <ul>
+              <li><a href="#50-nam">50 years for community health</a></li>
+              <li><a href="#hanh-trinh">Our journey of growth</a></li>
+              <li><a href="#con-so">Key figures</a></li>
+            </ul>
+            <ul>
+              <li><a href="#video">50th anniversary film</a></li>
+              <li><a href="#tri-an">Gratitude</a></li>
+              <li><a href="#su-kien">Featured events</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Connect</h4>
+          <ul class="footer__social">
+            <li><a href="#">Facebook <span>↗</span></a></li>
+            <li><a href="#">LinkedIn <span>↗</span></a></li>
+            <li><a href="#">Youtube <span>↗</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer__copy">Copyright © 2026 - Imexpharm. All Rights Reserved.</p>
+    </div>
+  </footer>
+   <script src="script.js"></script>
+   <script src="flip-card.js"></script>
+   <script src="video-autoplay.js"></script>
+   <script src="i18n.js"></script>
+</body>
+</html>
