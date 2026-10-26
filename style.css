@@ -987,3 +987,336 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
 
 /* Icon play trên nút: xoay ▲ thành ▶ */
 .btn--play img { transform: rotate(90deg); }
+
+/* =========================================================
+   HÀNH TRÌNH PHÁT TRIỂN – BẢN MỚI THEO FIGMA
+   Dán toàn bộ đoạn này vào CUỐI file style.css
+========================================================= */
+
+/* Nền: ảnh images/journey-bg.png (núi, mây, sông, sen).
+   Chưa có ảnh thì dùng nền xanh nhạt. */
+.journey.journey-v2 {
+  position: relative;
+  overflow: hidden;
+  background:
+    url("images/journey-bg.png") center / cover no-repeat,
+    radial-gradient(ellipse at 70% 15%, #dcecf8 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 75%, #eef4fb 0%, transparent 50%),
+    linear-gradient(180deg, #ffffff 0%, #eef6fc 35%, #e3f0fa 70%, #ffffff 100%);
+}
+
+/* Khung vẽ theo đúng tỷ lệ bản Figma (940 x 758) */
+.jv2-stage {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  aspect-ratio: 940 / 758;
+  font-size: min(16px, 1.111vw);   /* mọi kích thước bên trong co giãn theo màn hình */
+}
+
+/* ---------- Chữ bên trái ---------- */
+.jv2-text {
+  position: absolute;
+  left: 4.8%;
+  top: 6.5%;
+  width: 40%;
+  max-width: none;
+}
+.journey-v2 .section-kicker {
+  font-size: 2.15em;
+  line-height: 1.3;
+  font-weight: 400;
+  color: var(--imp);
+}
+.journey-v2 .journey__title {
+  margin-top: .1em;
+  font-size: 3.6em;
+  line-height: 1.22;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--imp);
+}
+.journey-v2 .journey__title span { display: block; }
+.journey-v2 .jv2-text .section-desc {
+  margin-top: 2.2em;
+  max-width: 34em;
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+/* ---------- Dòng sông + điểm mốc ---------- */
+.journey-v2 .journey__river {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  filter: none;
+}
+.journey-v2 .journey__river path {
+  fill: none;
+  stroke: url(#jv2River);
+  stroke-width: 26;
+  stroke-linecap: round;
+  opacity: .9;
+}
+.journey-v2.has-bg .journey__river { display: none; }   /* ảnh nền đã có sông */
+
+.jv2-dot {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 1.05em;
+  height: 1.05em;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #fff;
+  border: .3em solid #b9b9b9;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+  z-index: 1;
+}
+
+/* ---------- Thẻ dấu mốc ---------- */
+.journey-v2 .journey__map {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.journey-v2 .milestone {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  display: flex;
+  align-items: center;
+  gap: .6em;
+  width: 10.2em;
+  height: 4.6em;
+  margin: 0;
+  padding: .45em .6em .45em .55em;
+  border-radius: .3em;
+  background: rgba(240, 240, 240, .95);
+  box-shadow: 0 .15em .6em rgba(0, 0, 0, .12);
+  pointer-events: auto;
+  cursor: pointer;
+}
+.journey-v2 .milestone:hover { box-shadow: 0 .4em 1.2em rgba(10, 83, 142, .25); }
+.journey-v2 .milestone--wide { width: 12.3em; height: 5em; }
+
+.journey-v2 .milestone__thumb {
+  flex: none;
+  width: 3.1em;
+  height: 3.1em;
+  border-radius: .2em;
+  background-color: #cfcfcf;
+  background-size: 1.6em;
+}
+.journey-v2 .milestone small {
+  display: block;
+  font-size: .68em;
+  line-height: 1.4;
+  color: #8a8a8a;
+}
+.journey-v2 .milestone b {
+  display: block;
+  font-size: .85em;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #6f6f6f;
+}
+.journey-v2 .milestone.is-active b,
+.journey-v2 .milestone:hover b { color: var(--imp); }
+
+/* Số thứ tự tròn ở góc trên trái thẻ */
+.journey-v2 .milestone-num {
+  display: inline-grid;
+  place-items: center;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  background: #8c8c8c;
+  color: #fff;
+  font-size: .9em;
+  font-weight: 700;
+  line-height: 1;
+}
+.journey-v2 .milestone .milestone-num {
+  position: absolute;
+  left: -.75em;
+  top: -.8em;
+}
+.journey-v2 .milestone.is-active .milestone-num,
+.journey-v2 .journey__detail .milestone-num { background: var(--imp); }
+
+/* ---------- Thẻ chi tiết (Khởi nhịp) ---------- */
+.journey-v2 .journey__detail {
+  position: absolute;
+  left: 5.85%;
+  top: 62.6%;
+  width: 38%;
+  min-height: 0;
+  margin: 0;
+  padding: 1.1em 1.4em 1.6em 1.1em;
+  border-radius: .6em;
+  background: linear-gradient(160deg, rgba(255,255,255,.96) 40%, rgba(219,241,255,.92) 100%);
+  box-shadow: 0 .4em 1.6em rgba(102, 150, 214, .25);
+  backdrop-filter: blur(4px);
+  z-index: 3;
+}
+.journey-v2 .journey__detail-head {
+  display: grid;
+  grid-template-columns: 11.2em 1fr;
+  gap: .8em;
+  align-items: start;
+}
+.journey-v2 .jv2-left {
+  position: relative;
+  padding-left: 1.5em;
+}
+.journey-v2 .jv2-left .milestone-num {
+  position: absolute;
+  left: -.35em;
+  top: -.2em;
+}
+.journey-v2 .jv2-left::before {          /* đường kẻ dọc dưới số 1 */
+  content: "";
+  position: absolute;
+  left: .37em;
+  top: 1.3em;
+  height: 3.6em;
+  width: 2px;
+  background: var(--imp);
+}
+.journey-v2 .jv2-left::after {           /* chấm tròn trên đường kẻ */
+  content: "";
+  position: absolute;
+  left: .14em;
+  top: 3.4em;
+  width: .5em;
+  height: .5em;
+  border-radius: 50%;
+  background: var(--imp);
+}
+.journey-v2 .journey__years {
+  display: flex;
+  align-items: center;
+  gap: .15em;
+  margin-top: 1.5em;
+  font-size: 1.45em;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  line-height: 1;
+  color: var(--imp);
+}
+.journey-v2 .journey__arrow { font-size: 1em; }
+.journey-v2 .journey__detail-title {
+  margin: .1em 0 0;
+  font-size: 1.9em;
+  line-height: 1.1;
+  font-weight: 900;
+  white-space: nowrap;
+  color: var(--imp-green);
+}
+.journey-v2 .journey__detail-text {
+  padding-top: .2em;
+  font-size: .82em;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* Đường cong nét đứt phía sau ảnh */
+.jv2-curve {
+  position: absolute;
+  left: 0;
+  bottom: 1.2em;
+  width: 100%;
+  height: 5.5em;
+  pointer-events: none;
+}
+.jv2-curve path {
+  fill: none;
+  stroke: #9aa8b5;
+  stroke-width: 1.2;
+  stroke-dasharray: 4 4;
+}
+
+/* Ảnh tư liệu kiểu ảnh dán, hơi nghiêng */
+.journey-v2 .journey__photo {
+  position: relative;
+  width: 56%;
+  margin: 1em 0 0 18%;
+  padding: .45em .45em 1.4em;
+  background: #f6f1e7;
+  border-radius: .15em;
+  box-shadow: 0 .3em 1em rgba(0, 0, 0, .18);
+  transform: rotate(-1.8deg);
+}
+.journey-v2 .journey__photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 330 / 165;
+  object-fit: cover;
+  background: #d9e2ea;
+}
+.jv2-tape {
+  position: absolute;
+  top: -.6em;
+  width: 3.4em;
+  height: 1.1em;
+  background: rgba(140, 190, 225, .55);
+  z-index: 1;
+}
+.jv2-tape--l { left: -1em; transform: rotate(-28deg); }
+.jv2-tape--r { right: -1em; transform: rotate(28deg); }
+
+/* =========================================================
+   MÀN HÌNH NHỎ (≤ 1200px): xếp dọc cho dễ xem
+========================================================= */
+@media (max-width: 1200px) {
+  .jv2-stage {
+    aspect-ratio: auto;
+    font-size: 15px;
+    padding: 60px 32px;
+    display: flex;
+    flex-direction: column;
+  }
+  .jv2-text { order: 1; }
+  .journey-v2 .journey__detail { order: 2; }
+  .journey-v2 .journey__map { order: 3; }
+  .jv2-text,
+  .journey-v2 .journey__detail { position: static; width: 100%; max-width: 640px; }
+  .journey-v2 .journey__detail { margin-top: 36px; }
+  .journey-v2 .journey__river,
+  .jv2-dot { display: none; }
+
+  .journey-v2 .journey__map {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 22px 18px;
+    margin-top: 40px;
+  }
+  .journey-v2 .milestone,
+  .journey-v2 .milestone--wide {
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    width: auto;
+    height: auto;
+    min-height: 4.6em;
+  }
+}
+
+@media (max-width: 600px) {
+  .jv2-stage { padding: 48px 16px; font-size: 14px; }
+  .journey-v2 .journey__title { font-size: 2.6em; }
+  .journey-v2 .journey__detail-head { grid-template-columns: 1fr; }
+  .journey-v2 .journey__photo { width: 90%; margin-left: 5%; }
+}

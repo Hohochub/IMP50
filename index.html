@@ -103,10 +103,11 @@
   <!-- =========================================================
        4. HÀNH TRÌNH PHÁT TRIỂN (bản đồ dấu mốc)
   ========================================================== -->
-  <section class="journey" id="hanh-trinh">
-    <div class="container journey__inner">
+ <section class="journey journey-v2" id="hanh-trinh">
+    <div class="jv2-stage">
 
-      <div class="journey__text">
+      <!-- Chữ bên trái -->
+      <div class="journey__text jv2-text">
         <p class="section-kicker section-kicker--left">Hành trình phát triển</p>
         <h2 class="journey__title">
           <span>Mỗi chặng đường</span>
@@ -120,44 +121,78 @@
         </p>
       </div>
 
-      <!-- Thẻ nội dung chi tiết của dấu mốc đang chọn -->
+      <!-- Dòng sông (tự ẩn nếu đã có ảnh nền images/journey-bg.png) -->
+      <svg class="journey__river" viewBox="0 0 940 758" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="jv2River" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="#cfe9fb" />
+            <stop offset=".5" stop-color="#9fd3f5" />
+            <stop offset="1" stop-color="#e3f3fd" />
+          </linearGradient>
+        </defs>
+        <path d="M455 640 C 430 590, 450 560, 459 540 S 478 505, 484 484 S 500 420, 509 388
+                 S 520 330, 536 309 S 610 288, 672 294 S 728 312, 744 306 S 795 285, 806 265
+                 S 850 170, 896 104 S 920 60, 940 40" />
+      </svg>
+
+      <!-- Các điểm mốc trên dòng sông -->
+      <span class="jv2-dot" style="--x:48.8%; --y:71.2%"></span>
+      <span class="jv2-dot" style="--x:51.5%; --y:63.9%"></span>
+      <span class="jv2-dot" style="--x:54.1%; --y:51.2%"></span>
+      <span class="jv2-dot" style="--x:57.0%; --y:40.8%"></span>
+      <span class="jv2-dot" style="--x:71.5%; --y:38.8%"></span>
+      <span class="jv2-dot" style="--x:79.1%; --y:40.4%"></span>
+      <span class="jv2-dot" style="--x:85.7%; --y:35.0%"></span>
+      <span class="jv2-dot" style="--x:95.3%; --y:13.7%"></span>
+
+      <!-- Thẻ dấu mốc. Muốn có mô tả riêng khi bấm: thêm data-text="..." -->
+      <div class="journey__map">
+        <div class="milestone" style="--x:47.4%; --y:73.9%"><span class="milestone-num">2</span><div class="milestone__thumb"></div><div><small>1982 - 1986</small><b>Định hướng</b></div></div>
+        <div class="milestone" style="--x:42.3%; --y:55.5%"><span class="milestone-num">3</span><div class="milestone__thumb"></div><div><small>1987 - 1991</small><b>Bắt nhịp</b></div></div>
+        <div class="milestone" style="--x:59.1%; --y:64.6%"><span class="milestone-num">4</span><div class="milestone__thumb"></div><div><small>1992 - 1996</small><b>Tái cấu trúc</b></div></div>
+        <div class="milestone" style="--x:44.0%; --y:43.5%"><span class="milestone-num">5</span><div class="milestone__thumb"></div><div><small>1997 - 2001</small><b>Vươn mình</b></div></div>
+        <div class="milestone" style="--x:58.7%; --y:53.7%"><span class="milestone-num">6</span><div class="milestone__thumb"></div><div><small>2002 - 2006</small><b>Tăng tốc</b></div></div>
+        <div class="milestone" style="--x:52.4%; --y:32.7%"><span class="milestone-num">7</span><div class="milestone__thumb"></div><div><small>2007 - 2011</small><b>Tiêu chuẩn Châu Âu</b></div></div>
+        <div class="milestone" style="--x:64.1%; --y:43.0%"><span class="milestone-num">8</span><div class="milestone__thumb"></div><div><small>2012 - 2016</small><b>Mở rộng</b></div></div>
+        <div class="milestone" style="--x:66.2%; --y:31.4%"><span class="milestone-num">9</span><div class="milestone__thumb"></div><div><small>2017 - 2022</small><b>Hội nhập</b></div></div>
+        <div class="milestone" style="--x:82.6%; --y:40.6%"><span class="milestone-num">10</span><div class="milestone__thumb"></div><div><small>2023</small><b>Nâng tầm</b></div></div>
+        <div class="milestone" style="--x:85.1%; --y:27.2%"><span class="milestone-num">11</span><div class="milestone__thumb"></div><div><small>2024</small><b>Đổi mới</b></div></div>
+        <div class="milestone milestone--wide" style="--x:68.2%; --y:20.8%"><span class="milestone-num">12</span><div class="milestone__thumb"></div><div><small>2025</small><b>Khởi động chu kỳ tăng trưởng mới</b></div></div>
+        <div class="milestone" style="--x:82.8%; --y:11.6%"><span class="milestone-num">13</span><div class="milestone__thumb"></div><div><small>2026</small><b>xxxxxxx</b></div></div>
+      </div>
+
+      <!-- Thẻ chi tiết dấu mốc đang chọn -->
       <div class="journey__detail">
         <div class="journey__detail-head">
-          <span class="milestone-num">1</span>
-          <div class="journey__years">
-            <span>1977</span>
-            <span class="journey__arrow">→</span>
-            <span>1981</span>
+          <div class="jv2-left">
+            <span class="milestone-num">1</span>
+            <div class="journey__years"><span>1977</span><span class="journey__arrow">→</span><span>1981</span></div>
+            <h3 class="journey__detail-title">Khởi nhịp</h3>
           </div>
           <p class="journey__detail-text">
             Công ty Dược phẩm Cấp II – tiền thân của Imexpharm – hình thành tại Đồng Tháp, đảm nhiệm
             phân phối thuốc phục vụ nhu cầu chăm sóc sức khỏe tại địa phương.
           </p>
         </div>
-        <h3 class="journey__detail-title">Khởi nhịp</h3>
+        <svg class="jv2-curve" viewBox="0 0 360 90" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M5 85 C 90 70, 140 30, 230 35 S 330 10, 355 2" />
+        </svg>
         <div class="journey__photo">
+          <i class="jv2-tape jv2-tape--l"></i><i class="jv2-tape jv2-tape--r"></i>
           <img src="images/journey-photo.png" alt="Tư liệu Imexpharm 1977" />
         </div>
       </div>
 
-      <!-- Bản đồ các dấu mốc (vị trí tuyệt đối theo Figma) -->
-      <div class="journey__map">
-        <svg class="journey__river" viewBox="0 0 860 1015" preserveAspectRatio="none" aria-hidden="true"><path d="M150 1000 C 60 900, 260 860, 180 780 S 60 650, 220 620 S 380 520, 300 470 S 520 420, 640 470 S 760 300, 700 230 S 620 120, 760 40" /></svg>
-        <div class="milestone" style="left: 74px; top: 928px;"><span class="milestone-num">2</span><div class="milestone__thumb"></div><div><small>1982 - 1986</small><b>Định hướng</b></div></div>
-        <div class="milestone" style="left: 248px; top: 820px;"><span class="milestone-num">3</span><div class="milestone__thumb"></div><div><small>1987 - 1991</small><b>Vươn mình</b></div></div>
-        <div class="milestone" style="left: 0px; top: 716px;"><span class="milestone-num">4</span><div class="milestone__thumb"></div><div><small>1992 - 2001</small><b>Bền nhịp</b></div></div>
-        <div class="milestone" style="left: 248px; top: 693px;"><span class="milestone-num">5</span><div class="milestone__thumb"></div><div><small>2002 - 2006</small><b>Mở rộng</b></div></div>
-        <div class="milestone" style="left: 30px; top: 576px;"><span class="milestone-num">6</span><div class="milestone__thumb"></div><div><small>2007 - 2011</small><b>Tăng tốc</b></div></div>
-        <div class="milestone" style="left: 151px; top: 449px;"><span class="milestone-num">7</span><div class="milestone__thumb"></div><div><small>2012 - 2016</small><b>Tái cấu trúc</b></div></div>
-        <div class="milestone" style="left: 321px; top: 573px;"><span class="milestone-num">8</span><div class="milestone__thumb"></div><div><small>2017 - 2018</small><b>Hội nhập</b></div></div>
-        <div class="milestone" style="left: 348px; top: 436px;"><span class="milestone-num">9</span><div class="milestone__thumb"></div><div><small>2019 - 2020</small><b>Tiên phong Châu Âu</b></div></div>
-        <div class="milestone" style="left: 588px; top: 541px;"><span class="milestone-num">10</span><div class="milestone__thumb"></div><div><small>2021 - 2022</small><b>Nâng tầm</b></div></div>
-        <div class="milestone" style="left: 623px; top: 386px;"><span class="milestone-num">11</span><div class="milestone__thumb"></div><div><small>2023 - 2024</small><b>Bứt phá</b></div></div>
-        <div class="milestone milestone--wide" style="left: 380px; top: 312px;"><span class="milestone-num">12</span><div class="milestone__thumb"></div><div><small>2025</small><b>Khởi động chu kỳ tăng trưởng mới</b></div></div>
-        <div class="milestone" style="left: 590px; top: 204px;"><span class="milestone-num">13</span><div class="milestone__thumb"></div><div><small>2026</small><b>xxxxxxx</b></div></div>
-        <div class="milestone" style="left: 489px; top: 55px;"><span class="milestone-num">14</span><div class="milestone__thumb"></div><div><small>2027</small><b>xxxxxxx</b></div></div>
-      </div>
     </div>
+
+    <!-- Có ảnh nền thì ẩn dòng sông vẽ bằng code -->
+    <script>
+      (function () {
+        var img = new Image();
+        img.onload = function () { document.getElementById("hanh-trinh").classList.add("has-bg"); };
+        img.src = "images/journey-bg.png";
+      })();
+    </script>
   </section>
 
   <!-- =========================================================
@@ -281,7 +316,7 @@
         <p class="thanks__kicker">Lời tri ân</p>
         <h2 class="thanks__title">
           <span class="thanks__big">50 năm</span>
-          <span class="thanks__sub">được viết nên bởi những con người</span>
+          <span class="thanks__sub">được viết nên bởi IMP-ers</span>
         </h2>
         <p class="section-desc section-desc--left thanks__desc">
           Cảm ơn những con người đã cùng Imexpharm bền tâm qua năm tháng, vững nhịp trên mỗi chặng
