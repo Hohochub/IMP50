@@ -1429,3 +1429,66 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
 .hero__wave {
   height: clamp(28px, 6vw, 110px);
 }
+
+/* =========================================================
+   THƯỚC PHIM: KHUNG VIDEO TO, ĐẸP TRÊN ĐIỆN THOẠI
+   Dán vào CUỐI style.css
+========================================================= */
+
+/* Máy tính bảng */
+@media (max-width: 1024px) {
+  .video { padding: 40px 0 70px; }
+  .video__player { margin-top: 30px; border-radius: 10px; }
+  .video__play { width: 100px; height: 100px; }
+  .video__play svg { width: 46px; height: 46px; }
+}
+
+/* Điện thoại */
+@media (max-width: 768px) {
+  .video { padding: 36px 0 48px; }
+  .video .section-title {
+    font-size: 30px;
+    line-height: 1.25;
+  }
+  .video .section-title .text-green { display: block; }   /* xuống dòng cho gọn */
+  .video .section-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 0 4px;
+  }
+
+  /* Khung video tràn sát 2 mép màn hình */
+  .video__player {
+    width: 100vw;
+    max-width: none;
+    margin: 24px 0 0 calc(50% - 50vw);   /* tràn sát 2 mép */
+    border-radius: 0;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 10px 30px rgba(10, 83, 142, .18);
+  }
+
+  /* Nút Play nhỏ lại cho cân khung */
+  .video__play { width: 68px; height: 68px; }
+  .video__play::before { inset: -8px; }
+  .video__play svg { width: 32px; height: 32px; margin-left: 4px; }
+
+  /* Dòng nhắc bật tiếng gọn hơn */
+  .video__player .video__mute-tip {
+    left: 10px;
+    bottom: 10px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  /* Popup video (khi bấm Play) tràn ngang màn hình */
+  .video-modal__box { width: 100vw; border-radius: 0; }
+  .video-modal__close { top: -44px; right: 12px; }
+}
+
+/* Điện thoại xoay ngang: video gần như full màn hình */
+@media (max-width: 900px) and (orientation: landscape) {
+  .video__player {
+    width: min(100vw, 160vh);
+    margin-left: calc(50% - min(50vw, 80vh));
+  }
+}
