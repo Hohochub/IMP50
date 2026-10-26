@@ -1352,3 +1352,26 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   margin-top: -2px;
   margin-left: 150px;
 }
+
+/* ===== Nút chọn ngôn ngữ VN | EN ===== */
+.header__lang a {
+  position: relative;
+  text-decoration: none !important;   /* bỏ gạch chân cũ ở EN */
+  opacity: .6;
+  transition: opacity .2s;
+}
+.header__lang a:hover { opacity: 1; }
+
+.header__lang a.is-active {
+  font-weight: 700;
+  opacity: 1;
+}
+.header__lang a.is-active::after {     /* gạch xanh lá giống menu */
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--imp-green);
+}
