@@ -505,3 +505,82 @@ function slideEvents(dir) {
 $(".events__nav--next")?.addEventListener("click", () => slideEvents(1));
 $(".events__nav--prev")?.addEventListener("click", () => slideEvents(-1));
 
+/* ===== Đổi ảnh tư liệu theo dấu mốc (data-photo) ===== */
+const jPhoto = document.querySelector(".journey__photo img");
+const jPhotoDefault = jPhoto ? jPhoto.getAttribute("src") : "";
+document.querySelectorAll(".milestone").forEach(m => {
+  m.addEventListener("click", () => {
+    if (!jPhoto) return;
+    jPhoto.src = m.dataset.photo || jPhotoDefault;
+    jPhoto.alt = m.querySelector("b").textContent;
+  });
+});
+
+/* =========================================================
+   NÚT "VỀ MỐC 1" TRONG PHẦN HÀNH TRÌNH
+   Dán đoạn này vào CUỐI script.js (cả 2 trang VN/EN dùng chung)
+========================================================= */
+(function () {
+  const box = document.querySelector(".journey__detail");
+  if (!box) return;
+
+  const num   = box.querySelector(".milestone-num");
+  const years = box.querySelector(".journey__years");
+  const title = box.querySelector(".journey__detail-title");
+  const text  = box.querySelector(".journey__detail-text");
+  const photo = box.querySelector(".journey__photo img");
+
+  /* Ghi nhớ nội dung mốc 1 lúc mới mở trang */
+  const first = {
+    num: num.textContent,
+    years: years.innerHTML,
+    title: title.textContent,
+    text: text.textContent,
+    photo: photo ? photo.getAttribute("src") : "",
+    alt: photo ? photo.alt : "",
+  };
+
+  /* Tạo nút */
+  const isEN = document.documentElement.lang === "en";
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "jv2-back";
+  btn.textContent = isEN ? "← Back to milestone 1" : "← Về Khởi nhịp";
+  box.appendChild(btn);
+
+  document.head.insertAdjacentHTML("beforeend", `<style>
+    .jv2-back {
+      position: absolute; right: 1.2em; bottom: 1em; z-index: 2;
+      padding: .35em .85em; border-radius: 999px;
+      background: var(--imp); color: #fff;
+      font-family: inherit;
+      font-size: .7em;
+      font-weight: 600;
+      line-height: 1.2; cursor: pointer;
+      box-shadow: 0 .3em .8em rgba(10,83,142,.25);
+      opacity: 0; transform: translateY(6px); pointer-events: none;
+      transition: opacity .3s, transform .3s, background .2s;
+    }
+    .jv2-back:hover { background: #0b6fb8; }
+    .journey__detail.is-other .jv2-back { opacity: 1; transform: none; pointer-events: auto; }
+    @media (max-width: 1200px) { .jv2-back { font-size: 13px; } }
+  </style>`);
+
+  /* Bấm mốc khác → hiện nút */
+  document.querySelectorAll(".milestone").forEach(m => {
+    m.addEventListener("click", () => box.classList.add("is-other"));
+  });
+
+  /* Bấm nút → quay về mốc 1 */
+  btn.addEventListener("click", () => {
+    num.textContent = first.num;
+    years.innerHTML = first.years;
+    title.textContent = first.title;
+    text.textContent = first.text;
+    if (photo) { photo.src = first.photo; photo.alt = first.alt; }
+    document.querySelectorAll(".milestone").forEach(x => x.classList.remove("is-active"));
+    box.classList.remove("is-other", "is-changing");
+    void box.offsetWidth;
+    box.classList.add("is-changing");
+  });
+})();
