@@ -1606,3 +1606,18 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
     margin-top: 8px;
   }
 }
+
+/* ===== Nút ← giống nút → (nền xanh gradient, mũi tên trắng) ===== */
+.slider-ctrl__btn--prev {
+  background: var(--btn-grad);                 /* cùng màu nút bên phải */
+}
+.slider-ctrl__btn--prev img {
+  filter: brightness(0) invert(1);             /* mũi tên xanh → trắng */
+}
+
+/* Giữ 2 nút luôn tròn đều, không bị bóp méo trên điện thoại */
+.slider-ctrl__btn {
+  flex: none;
+  width: 40px;
+  height: 40px;
+}
