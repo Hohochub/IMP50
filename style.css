@@ -1599,3 +1599,10 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
 .thanks__hint img {
   display: none;               /* ẩn icon bàn tay */
 }
+
+/* ===== Điện thoại: đẩy đường gạch xanh xuống dưới chữ viết tay ===== */
+@media (max-width: 768px) {
+  .thanks__script img {
+    margin-top: 8px;
+  }
+}
