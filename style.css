@@ -1492,3 +1492,102 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
     margin-left: calc(50% - min(50vw, 80vh));
   }
 }
+
+/* =========================================================
+   LỜI TRI ÂN: HIỂN THỊ ĐẸP TRÊN MÁY TÍNH BẢNG & ĐIỆN THOẠI
+   Dán vào CUỐI style.css
+========================================================= */
+.thanks { overflow: hidden; }   /* chặn tràn ngang khi thẻ trượt */
+
+/* ---------- Máy tính bảng (≤ 1200px) ---------- */
+@media (max-width: 1200px) {
+  .thanks__inner { grid-template-columns: 1fr; gap: 48px; }
+  .thanks__text { max-width: 640px; }
+  .thanks__slider { width: 100%; max-width: 760px; margin: 0 auto; }
+  .quote-stack { width: 100%; max-width: 707px; margin: 0 auto; }
+  .quote-card--front { transform: rotate(1.5deg) translate(0, 20px); }
+  .slider-ctrl { margin: 40px auto 0; }
+  .thanks__hint { justify-content: center; margin: 8px 0 0; }
+  .thanks__thumbs { justify-content: center; margin: 24px 0 0; }
+}
+
+/* ---------- Điện thoại (≤ 768px) ---------- */
+@media (max-width: 768px) {
+  .thanks { padding: 32px 0 48px; }
+  .thanks__inner { gap: 28px; padding: 0 16px; }
+
+  /* Chữ bên trái */
+  .thanks__kicker { margin-left: 0; font-size: 24px; }
+  .thanks__big { margin-top: 4px; font-size: 54px; line-height: 1.15; }
+  .thanks__sub { margin-left: 0; max-width: none; font-size: 32px; line-height: 1.15; }
+  .thanks__desc { max-width: none; margin: 18px 0 0; font-size: 16px; }
+
+  /* Chữ viết tay "Cùng nhau viết tiếp…" */
+  .thanks__script { margin-top: 20px; transform: rotate(-4deg); }
+  .thanks__script p { font-size: 42px; }
+  .thanks__script img { width: 200px; height: auto; margin: -18px auto 0; transform: rotate(4deg); }
+
+  /* Khung thẻ: 3 lớp xếp chồng nhưng gọn trong màn hình */
+  .quote-stack { height: auto; margin: 8px 0 0; }
+  .quote-card { border-radius: 22px; }
+  .quote-card--back1,
+  .quote-card--back2 {
+    display: block;
+    position: absolute;
+    inset: 0;
+    height: auto;
+  }
+  .quote-card--back1,
+  .quote-stack:hover .quote-card--back1 { transform: rotate(2.5deg) !important; }
+  .quote-card--back2,
+  .quote-stack:hover .quote-card--back2 { transform: rotate(-2deg) !important; }
+
+  /* Thẻ chính: ảnh ở trên, chữ ở dưới */
+  .quote-card--front {
+    position: relative;
+    height: auto;
+    flex-direction: column;
+    gap: 14px;
+    padding: 12px 12px 20px;
+    transform: none;
+  }
+  .quote-card__photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: 16px;
+    object-fit: cover;
+    object-position: center 25%;   /* giữ khuôn mặt trong khung */
+  }
+  .quote-card__body { padding: 30px 6px 0; }
+  .quote-card__mark { top: -26px; left: 2px; font-size: 64px; }
+  .quote-card__text { font-size: 14px; line-height: 1.65; }
+  .quote-card__line { margin: 14px 0 10px; }
+  .quote-card__footer { flex-wrap: wrap; gap: 14px 18px; }
+  .quote-card__name { font-size: 18px; }
+  .quote-card__role { font-size: 13px; }
+  .quote-card__years { padding-left: 16px; }
+
+  /* Hiệu ứng trượt khi đổi thẻ nhẹ hơn */
+  .quote-card--front.is-out-left  { transform: translateX(-40px); }
+  .quote-card--front.is-out-right { transform: translateX(40px); }
+
+  /* Điều khiển + ảnh nhỏ */
+  .slider-ctrl { width: 100%; max-width: 320px; margin: 28px auto 0; }
+  .thanks__hint { justify-content: center; text-align: center; font-size: 14px; }
+  .thanks__hint img { width: 26px; height: 26px; }
+  .thanks__thumbs {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    margin: 18px 0 0;
+  }
+  .thanks__thumbs img,
+  .thanks__more {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 8px;
+  }
+  .thanks__more img { width: 60%; height: auto; }
+}
