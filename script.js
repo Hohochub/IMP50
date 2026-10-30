@@ -451,7 +451,7 @@ if (front) {
   function goTo(i, dir = 1) {
     i = (i + total) % total;
     if (i === current) return;
-    front.classList.add(dir > 0 ? "is-out-left" : "is-out-right");
+    front.classList.add(dir > 0 ? "is-out-right" : "is-out-left");
     setTimeout(() => {
       current = i;
       render(current);
@@ -478,7 +478,7 @@ if (front) {
   addEventListener("pointerup", e => {
     if (startX === null) return;
     const dx = e.clientX - startX;
-    if (Math.abs(dx) > 50) goTo(current + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
+    if (Math.abs(dx) > 50) goTo(current + (dx < 0 ? 1 : -1), dx < 0 ? -1 : 1);
     startX = null;
     stack.classList.remove("is-dragging");
   });
