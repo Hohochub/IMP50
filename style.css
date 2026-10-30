@@ -1591,3 +1591,11 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   }
   .thanks__more img { width: 60%; height: auto; }
 }
+
+/* ===== Lời tri ân: sửa mũi tên nút sau + bỏ bàn tay ===== */
+.slider-ctrl__btn--next img {
+  transform: rotate(180deg);   /* ← thành → */
+}
+.thanks__hint img {
+  display: none;               /* ẩn icon bàn tay */
+}
